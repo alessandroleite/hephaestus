@@ -39,6 +39,14 @@ public class Sprint implements Model<Long> {
 	 */
 	private DateTime endDate;
 
+	public Sprint() {
+		super();
+	}
+
+	public Sprint(Long id) {
+		this.id = id;
+	}
+
 	/**
 	 * @return the id
 	 */
@@ -47,7 +55,8 @@ public class Sprint implements Model<Long> {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(Long id) {
 		this.id = id;
@@ -61,7 +70,8 @@ public class Sprint implements Model<Long> {
 	}
 
 	/**
-	 * @param product the product to set
+	 * @param product
+	 *            the product to set
 	 */
 	public void setProduct(Product product) {
 		this.product = product;
@@ -75,7 +85,8 @@ public class Sprint implements Model<Long> {
 	}
 
 	/**
-	 * @param description the description to set
+	 * @param description
+	 *            the description to set
 	 */
 	public void setDescription(String description) {
 		this.description = description;
@@ -89,7 +100,8 @@ public class Sprint implements Model<Long> {
 	}
 
 	/**
-	 * @param goals the goals to set
+	 * @param goals
+	 *            the goals to set
 	 */
 	public void setGoals(String goals) {
 		this.goals = goals;
@@ -103,7 +115,8 @@ public class Sprint implements Model<Long> {
 	}
 
 	/**
-	 * @param startDate the startDate to set
+	 * @param startDate
+	 *            the startDate to set
 	 */
 	public void setStartDate(DateTime startDate) {
 		this.startDate = startDate;
@@ -117,7 +130,8 @@ public class Sprint implements Model<Long> {
 	}
 
 	/**
-	 * @param endDate the endDate to set
+	 * @param endDate
+	 *            the endDate to set
 	 */
 	public void setEndDate(DateTime endDate) {
 		this.endDate = endDate;

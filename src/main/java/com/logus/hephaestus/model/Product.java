@@ -25,9 +25,12 @@ public class Product implements Model<Long> {
 	public Product() {
 		super();
 	}
-
-	public Product(Long id, String name, String description) {
+	public Product(Long id){
 		this.id = id;
+		
+	}
+	public Product(Long id, String name, String description) {
+		this(id);
 		this.name = name;
 		this.description = description;
 	}

@@ -4,8 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import org.springframework.jdbc.core.RowMapper;
-
 import com.google.common.base.Preconditions;
 import com.logus.hephaestus.model.Product;
 
@@ -44,12 +42,16 @@ public class ProductDao extends DaoSupport<Product, Long> {
 						new ProductRowMapper(), id);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Product> findAll() {
-		return null;
+		return this
+				.getJdbcTemplate()
+				.query("SELECT id_product, no_product, ds_product from tb_product order by no_product",
+						new ProductRowMapper());
 	}
 
-	private static class ProductRowMapper implements RowMapper {
+	private static class ProductRowMapper implements com.logus.hephaestus.model.dao.RowMapper<Product> {
 		@Override
 		public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
 			return new Product(rs.getLong(1), rs.getString(2), rs.getString(3));
